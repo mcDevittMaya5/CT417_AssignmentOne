@@ -5,7 +5,7 @@ import java.util.UUID;
 public class Student {
 
     private String name;
-    private int age;
+    private final int age;
     private final LocalDate DOB;
     private final UUID studentId;
     private String username;
@@ -22,7 +22,7 @@ public class Student {
 
     public String getUsername()
     {
-        username = name+ Integer.toString(age);
+        username = name + age;
         return username;
     }
 
