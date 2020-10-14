@@ -9,8 +9,8 @@ public class Student {
     private final LocalDate DOB;
     private final UUID studentId;
     private String username;
-    private ArrayList courses = new ArrayList<Course>();
-    private ArrayList modules = new ArrayList<Module>();
+    private final ArrayList<Course> courses = new ArrayList<>();
+    private final ArrayList<Module> modules = new ArrayList<>();
 
     public Student(String name,int age,LocalDate DOB) {
         this.name=name;
@@ -42,15 +42,30 @@ public class Student {
         courses.add(course);
     }
 
+    public void printCourses() {
+        for (Course i : courses)
+        {
+            System.out.println(i);
+        }
+    }
+
     public void removeCourse(Course course){
         courses.remove(course);
     }
 
     public void addModule(Module module){
-        courses.add(module);
+        modules.add(module);
+    }
+
+    public void printModule() {
+        for (Module i : modules)
+        {
+            System.out.println(i);
+        }
     }
 
     public void removeModule(Module module){
-        courses.add(module);
+        modules.add(module);
     }
+
 }
