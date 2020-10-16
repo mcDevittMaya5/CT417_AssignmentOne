@@ -9,4 +9,17 @@ class StudentTest {
     void usernameTest() {
         assertEquals("Maya McDevitt21",s1.getUsername());
     }
+
+    @Test
+    void getNameTest(){
+        assertEquals("Maya McDevitt",s1.getName());
+    }
+
+    //to do getstudent id - maybe mock data
+
+    //to do add/remove and print course [course class not complete]
+
+    //to do add/remove and print module
+
+    
 }
