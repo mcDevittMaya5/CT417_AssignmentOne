@@ -45,33 +45,38 @@ public class Student {
     }
 
     public void addCourse(Course course){
-        courses.add(course);
-    }
-
-    public void printCourses() {
-        for (Course i : courses)
-        {
-            System.out.println(i);
+        if(!courses.contains(course)) {
+            courses.add(course);
+            course.addStudent(this);
         }
+    }
+    public ArrayList getCourses() {
+        return courses;
     }
 
     public void removeCourse(Course course){
-        courses.remove(course);
-    }
-
-    public void addModule(Module module){
-        modules.add(module);
-    }
-
-    public void printModule() {
-        for (Module i : modules)
-        {
-            System.out.println(i);
+        if(courses.contains(course)) {
+            courses.remove(course);
+            course.removeStudent(this);
         }
     }
 
+    public void addModule(Module module){
+        if(!modules.contains(module)) {
+            modules.add(module);
+            //module.addStudent(this);
+        }
+    }
+
+    public ArrayList<Module> getModules() {
+        return modules;
+    }
+
     public void removeModule(Module module){
-        modules.add(module);
+        if(modules.contains(module)) {
+            modules.remove(module);
+           // module.removeStudent(this);
+        }
     }
 
 }

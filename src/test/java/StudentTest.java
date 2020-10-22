@@ -15,9 +15,7 @@ class StudentTest {
         assertEquals("Maya McDevitt",s1.getName());
     }
 
-    //to do getStudent id - maybe mock data
-
-    //to do add/remove and print course [course class not complete]
+    //to do add/remove course
 
     //to do add/remove and print module
 
