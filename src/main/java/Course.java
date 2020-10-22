@@ -35,16 +35,12 @@ public class Course {
         if (!modules.contains(module)) {
             modules.add(module);
           //module.add(this);  // to do
-        } else {
-            System.out.print("Module " + module + " is already offered for this course");
         }
     }
     public void removeModule(Module module) {
         if (modules.contains(module)) {
             modules.remove(module);
            //module.remove(this);  // to do
-        } else {
-            System.out.print("Module " + module + " is not offered for this course");
         }
     }
 
@@ -55,17 +51,13 @@ public class Course {
         if (!students.contains(student)) {
             students.add(student);
             student.addCourse(this); //adding the course to the student
-        } else {
-            System.out.print("Student " + student +" is already Enrolled in this course");
-        }
+            }
     }
 
      public void removeStudent(Student student) {
          if (students.contains(student)) {
              students.remove(student);
              student.removeCourse(this); //adding the course to the student
-         } else {
-             System.out.print("Student " + student +" is not Enrolled in this course");
          }
      }
 
