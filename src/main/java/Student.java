@@ -20,6 +20,12 @@ public class Student {
         username = getUsername();
     }
 
+    @Override
+    public String toString()
+    {
+        return name;
+    }
+
     public String getUsername()
     {
         username = name + age;

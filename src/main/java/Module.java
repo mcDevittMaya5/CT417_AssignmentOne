@@ -11,6 +11,12 @@ public class Module {
         this.moduleID = moduleID;
     }
 
+    @Override
+    public String toString()
+    {
+        return moduleName;
+    }
+
     public String getModuleName() {return moduleName;}
     public void setModuleName(String name){moduleName=name;}
 
