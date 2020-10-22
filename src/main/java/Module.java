@@ -14,7 +14,7 @@ public class Module {
     public String getModuleName() {return moduleName;}
     public void setModuleName(String name){moduleName=name;}
 
-    public String getModuleID(){return moduleID}
+    public String getModuleID(){return moduleID;}
     public void setModuleID(String id){moduleID = id;}
 
 
