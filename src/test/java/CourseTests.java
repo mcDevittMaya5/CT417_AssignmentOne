@@ -3,6 +3,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CourseTests {
     Course testCourse = new Course("4BP",LocalDate.of(2017,9,1),LocalDate.of(2021,6,5));
@@ -10,7 +11,7 @@ public class CourseTests {
     Student testStudent = new Student("Maya McDevitt",21,LocalDate.of(1999,6,16));
 
     @Test
-    void getCourseName()
+    void getCourseNameTest()
     {
         assertEquals("4BP",testCourse.getCourseName());
     }
@@ -37,7 +38,7 @@ public class CourseTests {
     void AddModuleTest()
     {
         testCourse.addModule(testModule);
-        assertEquals(true,testCourse.getModules().contains(testModule));
+        assertTrue(testCourse.getModules().contains(testModule));
     }
 
     @Test
@@ -45,7 +46,7 @@ public class CourseTests {
     {
         testCourse.addModule(testModule);
         testCourse.removeModule(testModule);
-        assertEquals(true,!testCourse.getModules().contains(testModule));
+        assertTrue(!testCourse.getModules().contains(testModule));
     }
 
     @Test

@@ -23,5 +23,44 @@ public class Module {
     public String getModuleID(){return moduleID;}
     public void setModuleID(String id){moduleID = id;}
 
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
 
+    public ArrayList<Course> getCourses() {
+        return courses;
+    }
+
+    public void addStudent(Student student){
+        if (!students.contains(student))
+        {
+            students.add(student);
+            student.addModule(this); //This ensures that the list of modules stored in student is updated
+        }
+    }
+
+    public void removeStudent(Student student)
+    {
+        if (students.contains(student))
+        {
+            students.remove(student);
+            student.removeModule(this); //This ensures that the list of modules stored in student is updated
+        }
+    }
+
+    public void addCourse(Course course){
+        if (!courses.contains(course))
+        {
+            courses.add(course);
+            course.addModule(this); //This ensures that the list of modules stored in course is updated
+        }
+    }
+
+    public void removeCourse(Course course){
+        if (courses.contains(course))
+        {
+            courses.remove(course);
+            course.removeModule(this); //This ensures that the list of modules stored in course is updated
+        }
+    }
 }
