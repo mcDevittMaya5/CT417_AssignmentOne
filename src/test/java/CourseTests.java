@@ -2,8 +2,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CourseTests {
     Course testCourse = new Course("4BP",LocalDate.of(2017,9,1),LocalDate.of(2021,6,5));
@@ -39,6 +38,7 @@ public class CourseTests {
     {
         testCourse.addModule(testModule);
         assertTrue(testCourse.getModules().contains(testModule));
+        assertTrue(testModule.getCourses().contains(testCourse));
     }
 
     @Test
@@ -46,7 +46,8 @@ public class CourseTests {
     {
         testCourse.addModule(testModule);
         testCourse.removeModule(testModule);
-        assertTrue(!testCourse.getModules().contains(testModule));
+        assertFalse(testCourse.getModules().contains(testModule));
+        assertFalse(testModule.getCourses().contains(testCourse));
     }
 
     @Test
@@ -63,8 +64,8 @@ public class CourseTests {
     void addStudentTest()
     {
         testCourse.addStudent(testStudent);
-        assertEquals(true,testCourse.getStudents().contains(testStudent));
-        //assertEquals(true,testStudent.getCourses().contains(testCourse));
+        assertTrue(testCourse.getStudents().contains(testStudent));
+        assertTrue(testStudent.getCourses().contains(testCourse));
     }
 
     @Test
@@ -72,7 +73,8 @@ public class CourseTests {
     {
         testCourse.addStudent(testStudent);
         testCourse.removeStudent(testStudent);
-        assertEquals(true,!testCourse.getStudents().contains(testStudent));
+        assertFalse(testCourse.getStudents().contains(testStudent));
+        assertFalse(testStudent.getCourses().contains(testCourse));
     }
 
 

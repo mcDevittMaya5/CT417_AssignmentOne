@@ -26,6 +26,10 @@ public class Student {
         return name;
     }
 
+    public LocalDate getDOB()
+    {
+        return DOB;
+    }
     public String getUsername()
     {
         username = name + age;
@@ -50,7 +54,7 @@ public class Student {
             course.addStudent(this);
         }
     }
-    public ArrayList getCourses() {
+    public ArrayList<Course> getCourses() {
         return courses;
     }
 
@@ -64,7 +68,7 @@ public class Student {
     public void addModule(Module module){
         if(!modules.contains(module)) {
             modules.add(module);
-            //module.addStudent(this);
+            module.addStudent(this);
         }
     }
 
@@ -75,7 +79,7 @@ public class Student {
     public void removeModule(Module module){
         if(modules.contains(module)) {
             modules.remove(module);
-           // module.removeStudent(this);
+            module.removeStudent(this);
         }
     }
 
