@@ -94,9 +94,6 @@ class StudentTest {
         assertEquals(testModules,testStudent.getModules());
 
     }
-
-
-    //to do add/remove and get  module
-
+    
     
 }
