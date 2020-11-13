@@ -12,26 +12,24 @@ public class Student {
     private final ArrayList<Course> courses = new ArrayList<>();
     private final ArrayList<Module> modules = new ArrayList<>();
 
-    public Student(String name,int age,LocalDate DOB) {
-        this.name=name;
+    public Student(String name, int age, LocalDate DOB) {
+        this.name = name;
         this.age = age;
-        this.DOB=DOB;
+        this.DOB = DOB;
         studentId = UUID.randomUUID();
         username = getUsername();
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return name;
     }
 
-    public LocalDate getDOB()
-    {
+    public LocalDate getDOB() {
         return DOB;
     }
-    public String getUsername()
-    {
+
+    public String getUsername() {
         username = name + age;
         return username;
     }
@@ -39,8 +37,8 @@ public class Student {
     public String getName() {
         return name;
     }
-    public void setName(String NewName)
-    {
+
+    public void setName(String NewName) {
         name = NewName;
     }
 
@@ -48,25 +46,26 @@ public class Student {
         return studentId;
     }
 
-    public void addCourse(Course course){
-        if(!courses.contains(course)) {
+    public void addCourse(Course course) {
+        if (!courses.contains(course)) {
             courses.add(course);
             course.addStudent(this);
         }
     }
+
     public ArrayList<Course> getCourses() {
         return courses;
     }
 
-    public void removeCourse(Course course){
-        if(courses.contains(course)) {
+    public void removeCourse(Course course) {
+        if (courses.contains(course)) {
             courses.remove(course);
             course.removeStudent(this);
         }
     }
 
-    public void addModule(Module module){
-        if(!modules.contains(module)) {
+    public void addModule(Module module) {
+        if (!modules.contains(module)) {
             modules.add(module);
             module.addStudent(this);
         }
@@ -76,8 +75,8 @@ public class Student {
         return modules;
     }
 
-    public void removeModule(Module module){
-        if(modules.contains(module)) {
+    public void removeModule(Module module) {
+        if (modules.contains(module)) {
             modules.remove(module);
             module.removeStudent(this);
         }

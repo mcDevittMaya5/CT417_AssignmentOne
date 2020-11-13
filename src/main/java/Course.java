@@ -17,6 +17,7 @@ public class Course {
     public String getCourseName() {
         return courseName;
     }
+
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
@@ -24,6 +25,7 @@ public class Course {
     public LocalDate getStartDate() {
         return startDate;
     }
+
     public LocalDate getEndDate() {
         return endDate;
     }
@@ -31,16 +33,18 @@ public class Course {
     public ArrayList<Module> getModules() {
         return modules;
     }
+
     public void addModule(Module module) {
         if (!modules.contains(module)) {
             modules.add(module);
             module.addCourse(this);
         }
     }
+
     public void removeModule(Module module) {
         if (modules.contains(module)) {
             modules.remove(module);
-            module.removeCourse(this); 
+            module.removeCourse(this);
         }
 
     }
@@ -48,18 +52,19 @@ public class Course {
     public ArrayList<Student> getStudents() {
         return students;
     }
+
     public void addStudent(Student student) {
         if (!students.contains(student)) {
             students.add(student);
             student.addCourse(this); //adding the course to the student
-            }
+        }
     }
 
-     public void removeStudent(Student student) {
-         if (students.contains(student)) {
-             students.remove(student);
-             student.removeCourse(this); //adding the course to the student
-         }
-     }
+    public void removeStudent(Student student) {
+        if (students.contains(student)) {
+            students.remove(student);
+            student.removeCourse(this); //adding the course to the student
+        }
+    }
 
 }
