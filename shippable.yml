@@ -6,4 +6,3 @@ build:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - shippable_retry mvn install -DskipTests=true
-    - cp -r target shippable/codecoverage
