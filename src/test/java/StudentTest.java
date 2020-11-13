@@ -56,7 +56,7 @@ class StudentTest {
         testStudent.addCourse(testCourse);
         testStudent.removeCourse(testCourse);
         assertFalse(testStudent.getCourses().contains(testCourse));
-        assertFalse(testCourse.getModules().contains(testStudent)); // ensure the module list in course has been synced
+        assertFalse(testCourse.getStudents().contains(testStudent));
     }
 
     @Test

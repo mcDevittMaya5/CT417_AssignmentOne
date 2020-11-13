@@ -5,8 +5,8 @@ public class Course {
     private String courseName;
     private final ArrayList<Module> modules = new ArrayList<>();
     private final ArrayList<Student> students = new ArrayList<>();
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private final LocalDate startDate;
+    private final LocalDate endDate;
 
     public Course(String courseName, LocalDate startDate, LocalDate endDate) {
         this.courseName = courseName;
@@ -34,14 +34,15 @@ public class Course {
     public void addModule(Module module) {
         if (!modules.contains(module)) {
             modules.add(module);
-          //module.add(this);  // to do
+            module.addCourse(this);
         }
     }
     public void removeModule(Module module) {
         if (modules.contains(module)) {
             modules.remove(module);
-           //module.remove(this);  // to do
+            module.removeCourse(this); 
         }
+
     }
 
     public ArrayList<Student> getStudents() {
